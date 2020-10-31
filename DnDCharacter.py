@@ -8,40 +8,62 @@ info = requests.get(url)
 
 html = BeautifulSoup(info.txt, "html.parser")
 
-strength = []
-dextarity = []
-constitution = []
-intelagence = []
-wisdom = []
-charisma = []
-current_hp = []
-acrobatics = []
-animal_handling = []
-arcana = []
-armor_class = []
-athletics = []
-deception = []
-history = []
-initiative = []
-insight = []
-intimidation = []
-investigation = []
-max_hp = []
-medicine = []
-nature = []
-perception = []
-performance = []
-persuasion = []
-proficiency = []
-religion = []
-sleight_of_hand = []
-speed = []
-stealth = []
-survival = []
+class name:
+    character_name = []
+    character_lvl = []
+    character_class = []
+    character_race = []
+
+class str: 
+    strength = []
+    athletics = []
+
+class dex:
+    dextarity = []
+    acrobatics = []
+    sleight_of_hand = []
+    stealth = []
+
+class con:
+    constitution = []
+
+class int:
+    intelagence = []
+    arcana = []
+    history = []
+    investigation = []
+    nature = []
+    religion = []
+
+class wis:
+    wisdom = []
+    animal_handling = []
+    insight = []
+    medicine = []
+    perception = []
+    survival = []
+
+class cha:
+    charisma = []
+    deception = []
+    intimidation = []
+    performance = []
+    persuasion = []
+
+class hp:
+    current_hp = []
+    max_hp = []
+
+class other:
+    armor_class = []
+    initiative = []
+    proficiency = []
+    speed = []
+
 
 
 def main():
-    print('Hello')
+    print('Hello World')
 
 if __name__ == "__main__":
     main()
