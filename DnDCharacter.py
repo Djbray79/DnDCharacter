@@ -1,33 +1,39 @@
 from bs4 import BeautifulSoup
 import requests
+import json
 
 
-url = "https://www.dndbeyond.com/characters/6917300/sOurHm"
 
-info = requests.get(url)
+page = requests.get ("https://character-service.dndbeyond.com/character/v3/character/6917300")
 
-html = BeautifulSoup(info.txt, "html.parser")
 
-class name:
+sheet = BeautifulSoup(page.text, "html.parser")
+
+print (sheet)
+
+
+
+class Name:
     character_name = []
     character_lvl = []
     character_class = []
     character_race = []
+    character_gender = []
 
-class str: 
+class Str: 
     strength = []
     athletics = []
 
-class dex:
+class Dex:
     dextarity = []
     acrobatics = []
     sleight_of_hand = []
     stealth = []
 
-class con:
+class Con:
     constitution = []
 
-class int:
+class Int:
     intelagence = []
     arcana = []
     history = []
@@ -35,7 +41,7 @@ class int:
     nature = []
     religion = []
 
-class wis:
+class Wis:
     wisdom = []
     animal_handling = []
     insight = []
@@ -43,18 +49,18 @@ class wis:
     perception = []
     survival = []
 
-class cha:
+class Cha:
     charisma = []
     deception = []
     intimidation = []
     performance = []
     persuasion = []
 
-class hp:
+class Hp:
     current_hp = []
     max_hp = []
 
-class other:
+class Other:
     armor_class = []
     initiative = []
     proficiency = []
