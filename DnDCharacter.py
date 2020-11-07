@@ -7,9 +7,11 @@ import json
 page = requests.get ("https://character-service.dndbeyond.com/character/v3/character/6917300")
 
 
-sheet = BeautifulSoup(page.text, "html.parser")
+#sheet = BeautifulSoup(page.text, "html.parser")
 
-print (sheet)
+file = json.loads(page.text)
+
+print(file)
 
 
 
