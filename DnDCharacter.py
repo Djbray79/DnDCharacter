@@ -31,22 +31,6 @@ class OtherInfo:
     armor_class = []
     initiative = []
     #proficiency = []
-    
-
-def proficiencyBonus():
-    if character_level == 1 or 2 or 3 or 4:
-            proficiency = 2
-    elif character_level == 5 or 6 or 7 or 8:
-            proficiency = 3
-    elif character_level == 9 or 10 or 11 or 12:
-            proficiency = 4
-    elif character_level == 13 or 14 or 15 or 16:
-            proficiency = 5
-    elif character_level == 17 or 18 or 19 or 20:
-            proficiency = 6
-    else:
-        proficiency = 7
-    return proficiency
 
 
 def main():
@@ -101,6 +85,22 @@ def main():
     modifier_intelangence = (intelagence - 10) // 2
     modifier_wisdom = (wisdom - 10) // 2
     modifier_charisma = (charisma - 10) // 2
+    
+
+    def proficiencyBonus():
+        if character_level == 1 or 2 or 3 or 4:
+                proficiency = 2
+        elif character_level == 5 or 6 or 7 or 8:
+                proficiency = 3
+        elif character_level == 9 or 10 or 11 or 12:
+                proficiency = 4
+        elif character_level == 13 or 14 or 15 or 16:
+                proficiency = 5
+        elif character_level == 17 or 18 or 19 or 20:
+                proficiency = 6
+        else:
+            proficiency = 7
+        return proficiency
 
 
     character_name = sheet['name']
@@ -124,7 +124,7 @@ def main():
     #class_modify_constitution = []
     #class_modify_intelagence = []
 
-    print(character_name, proficiency)
+    print(character_name, character_level, proficiency)
 
 if __name__ == "__main__":
     main()
