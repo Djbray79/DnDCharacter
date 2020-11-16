@@ -49,6 +49,7 @@ class OtherInfo:
     initiative = []
     proficiency = []
 
+#functions to access data from dict for use in main function
 def proficiencyBonus(character_level):
     bonus = math.ceil(1 + (0.25 * (character_level)))
     return bonus
