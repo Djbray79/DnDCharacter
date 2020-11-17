@@ -39,6 +39,15 @@ class Stats:
     charisma = []
 
 
+class ModifyStats:
+    modifier_strength = []
+    modifier_dexterity = []
+    modifier_constitution = []
+    modifier_intelligence = []
+    modifier_wisdom = []
+    modifier_charisma = []
+
+
 class HealthInfo:
     current_hitpoints = []
     max_hitpoints = []
@@ -89,7 +98,7 @@ def main():
     base_hitpoints = sheet['baseHitPoints']
     removed_hitpoints = sheet['removedHitPoints']
     base_speed = race['weightSpeeds']['normal']['walk']
-    base_armor_class = [10]
+    base_armor_class = 10
 
     
     race_modify_dexterity = race_modify(6)
@@ -128,6 +137,7 @@ def main():
     current_hitpoints = max_hitpoints - removed_hitpoints
     initiative = modifier_dexterity
     proficiency = proficiencyBonus(character_level)
+    armor_class =  base_armor_class + modifier_dexterity + unarmored_class_modifier
 
 
     #code that has not yet been added
@@ -139,7 +149,16 @@ def main():
     #class_modify_constitution = []
     #class_modify_intelligence = []
 
-    print(character_name, class_modify_wisdom, race_modify_dexterity)
+    print('-Here is the basic info-\nCharacter Name:  {}\nCharacter Level:  {}\nCharacter Class:  {}\nCharacter Race:  {}\nGender:  {}\nAge:  {}\nMovement Speed:  {}'.format(character_name, character_level, character_class, character_race, character_gender, character_age, base_speed))
+
+    print('-Here are the stats-\nStrength: {}\nDexterity: {}\nConstitution: {}\nIntelligence: {}\nWisdom: {}\nCharisma: {}'.format(strength, dexterity, constitution, intelligence, wisdom, charisma))
+
+    print('-Here are your Modifiers-\nStrength: {}\nDexterity: {}\nConstitution: {}\nIntelligence: {}\nWisdom: {}\nCharisma: {}'.format(modifier_strength, modifier_dexterity, modifier_constitution, modifier_intelligence, modifier_wisdom, modifier_charisma))
+
+    print('-here is the current/max hit points-\nCurrent Hit Points: {}\nMax Hit Points: {}'.format(current_hitpoints, max_hitpoints))
+
+    print('-Here is some other info-\nArmor Class: {}\nInitiative: {}\nProficiency: {}'.format(armor_class, initiative, proficiency))
+
 
 if __name__ == "__main__":
     main()

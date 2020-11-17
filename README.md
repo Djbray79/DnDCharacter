@@ -2,6 +2,9 @@
 <h2>DnD character info scraper</h2>
 
 <p>You will need to have requests, json, and math installed to be imported for this project.</p>
+<p><li>pip install requests</li>
+    <li>json is a built in module</li>
+    <li>math is a built in module</li>
 
 
 <p>This program will pull down my character data from D&D Beyond website and make it available for other programs 
