@@ -83,6 +83,20 @@ def class_modify(mod):
     class_modify = modifiers['class'][mod]['value']
     return class_modify
 
+def menu():
+    options = ('\033[1;33;40m-Options Menu-\n'
+                'Please enter (1-6)\n'
+                '\033[1;37;40m1. Character Info\n'
+                '2. Character Stats\n'
+                '3. Character Modifiers\n'
+                '4. Characters Health\n'
+                '5. Characters Other Info\n'
+                '6. Exit\n'
+                'Choice: ')
+    choice = input(options)
+    return choice
+
+
 
 # this main function pulls down the character sheet and pulls out the relivant data
 def main():
@@ -149,15 +163,24 @@ def main():
     #class_modify_constitution = []
     #class_modify_intelligence = []
 
-    print('-Here is the basic info-\nCharacter Name:  {}\nCharacter Level:  {}\nCharacter Class:  {}\nCharacter Race:  {}\nGender:  {}\nAge:  {}\nMovement Speed:  {}'.format(character_name, character_level, character_class, character_race, character_gender, character_age, base_speed))
+    while True:
+        choice = menu()
+        if choice == '1':
+            print('\033[1;31;40m-Here is the basic info-\n\033[1;37;40mCharacter Name:  \033[1;34;40m{}\n\033[1;37;40mCharacter Level:  \033[1;34;40m{}\n\033[1;37;40mCharacter Class:  \033[1;34;40m{}\n\033[1;37;40mCharacter Race:  \033[1;34;40m{}\n\033[1;37;40mGender:  \033[1;34;40m{}\n\033[1;37;40mAge:  \033[1;34;40m{}\n\033[1;37;40mMovement Speed:  \033[1;34;40m{}'.format(character_name, character_level, character_class, character_race, character_gender, character_age, base_speed))
+        elif choice == '2':
+            print('\033[1;31;40m-Here are the stats-\n\033[1;37;40mStrength: \033[1;34;40m{}\n\033[1;37;40mDexterity: \033[1;34;40m{}\n\033[1;37;40mConstitution: \033[1;34;40m{}\n\033[1;37;40mIntelligence: \033[1;34;40m{}\n\033[1;37;40mWisdom: \033[1;34;40m{}\n\033[1;37;40mCharisma: \033[1;34;40m{}'.format(strength, dexterity, constitution, intelligence, wisdom, charisma))
+        elif choice == '3':
+            print('\033[1;31;40m-Here are your Modifiers-\n\033[1;37;40mStrength: \033[1;34;40m{}\n\033[1;37;40mDexterity: \033[1;34;40m{}\n\033[1;37;40mConstitution: \033[1;34;40m{}\n\033[1;37;40mIntelligence: \033[1;34;40m{}\n\033[1;37;40mWisdom: \033[1;34;40m{}\n\033[1;37;40mCharisma: \033[1;34;40m{}'.format(modifier_strength, modifier_dexterity, modifier_constitution, modifier_intelligence, modifier_wisdom, modifier_charisma))
+        elif choice == '4':
+            print('\033[1;31;40m-here is the current/max hit points-\n\033[1;37;40mCurrent Hit Points: \033[1;34;40m{}\n\033[1;37;40mMax Hit Points: \033[1;34;40m{}'.format(current_hitpoints, max_hitpoints))
+        elif choice == '5':
+            print('\033[1;31;40m-Here is some other info-\n\033[1;37;40mArmor Class: \033[1;34;40m{}\n\033[1;37;40mInitiative: \033[1;34;40m{}\n\033[1;37;40mProficiency: \033[1;34;40m{}'.format(armor_class, initiative, proficiency))
+        elif choice == '6':
+            break
+        else:
+            print('\33[1;31;40m-You need to enter a number bewteen 1 and 6 please-')
+            continue           
 
-    print('-Here are the stats-\nStrength: {}\nDexterity: {}\nConstitution: {}\nIntelligence: {}\nWisdom: {}\nCharisma: {}'.format(strength, dexterity, constitution, intelligence, wisdom, charisma))
-
-    print('-Here are your Modifiers-\nStrength: {}\nDexterity: {}\nConstitution: {}\nIntelligence: {}\nWisdom: {}\nCharisma: {}'.format(modifier_strength, modifier_dexterity, modifier_constitution, modifier_intelligence, modifier_wisdom, modifier_charisma))
-
-    print('-here is the current/max hit points-\nCurrent Hit Points: {}\nMax Hit Points: {}'.format(current_hitpoints, max_hitpoints))
-
-    print('-Here is some other info-\nArmor Class: {}\nInitiative: {}\nProficiency: {}'.format(armor_class, initiative, proficiency))
 
 
 if __name__ == "__main__":
