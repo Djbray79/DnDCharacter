@@ -17,6 +17,8 @@ classes = sheet['classes']
 classes_refine = classes[0]
 main_class = classes_refine['definition']
 modifiers = sheet['modifiers']
+class_mod = modifiers['class']
+race_mod = modifiers['race']
 
 
 # Creating classes for the diffrent types of character info
@@ -97,6 +99,15 @@ def menu():
     return choice
 
 
+def search(items, search_value):
+    for item in items:
+        if item['friendlySubtypeName'] == search_value:
+            return item['value']        
+    return 0
+    
+         
+
+
 
 # this main function pulls down the character sheet and pulls out the relivant data
 def main():
@@ -122,7 +133,7 @@ def main():
     
     class_modify_wisdom = class_modify(0)
     class_modify_charisma = class_modify(1)
-    unarmored_class_modifier = class_modify(14)
+    unarmored_class_modifier = search(class_mod, 'Unarmored Armor Class')
 
 
     strength = totalStats(base_strength, 0, 0)
