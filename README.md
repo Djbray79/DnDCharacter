@@ -13,6 +13,7 @@
 
 
 <p>The features I have implemented in my project are:
+    <li>Implement a “master loop” console application where the user can repeatedly enter commands/perform actions, including choosing to exit the program</li>
     <li>Create a dictionary or list, populate it with several values, retrieve at least one value, and use it in your program</li>
     <li>Read data from an external file, such as text, JSON, CSV, etc and use that data in your application</li>
     <li>Create and call at least 3 functions, at least one of which must return a value that is used</li>

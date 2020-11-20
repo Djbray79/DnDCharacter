@@ -126,21 +126,29 @@ def main():
     base_armor_class = 10
 
     
-    race_modify_dexterity = race_modify(6)
-    race_modify_intelligence = race_modify(5)
-    race_modify_charisma = race_modify(4)
+    race_modify_strength = search(race_mod, 'Strength Score')
+    race_modify_constitution = search(race_mod, 'Constitution Score')
+    race_modify_wisdom = search(race_mod, 'Wisdom Score')
+    race_modify_dexterity = search(race_mod, 'Dextarity Score')
+    race_modify_intelligence = search(race_mod, 'Intelligence Score')
+    race_modify_charisma = search(race_mod, 'Charisma Score')
 
     
-    class_modify_wisdom = class_modify(0)
-    class_modify_charisma = class_modify(1)
+    class_modify_wisdom = search(class_mod, 'Wisdom Score')
+    class_modify_charisma = search(class_mod, 'Charisma Score')
+    class_modify_strength = search(class_mod, 'Strength Score')
+    class_modify_dextarity = search(class_mod, 'Dextarity Score')
+    class_modify_constitution = search(class_mod, 'Constitution Score')
+    class_modify_intelligence = search(class_mod, 'Intelligence Score')
+
     unarmored_class_modifier = search(class_mod, 'Unarmored Armor Class')
 
 
-    strength = totalStats(base_strength, 0, 0)
-    dexterity = totalStats(base_dexterity, race_modify_dexterity, 0)
-    constitution = totalStats(base_constitution, 0, 0) 
-    intelligence = totalStats(base_intelligence, race_modify_intelligence, 0)
-    wisdom = totalStats(base_wisdom, 0, class_modify_wisdom)
+    strength = totalStats(base_strength, race_modify_strength, class_modify_strength)
+    dexterity = totalStats(base_dexterity, race_modify_dexterity, class_modify_dextarity)
+    constitution = totalStats(base_constitution, race_modify_constitution, class_modify_constitution) 
+    intelligence = totalStats(base_intelligence, race_modify_intelligence, class_modify_intelligence)
+    wisdom = totalStats(base_wisdom, race_modify_wisdom, class_modify_wisdom)
     charisma = totalStats(base_charisma, race_modify_charisma, class_modify_charisma)
         
 
@@ -164,15 +172,6 @@ def main():
     proficiency = proficiencyBonus(character_level)
     armor_class =  base_armor_class + modifier_dexterity + unarmored_class_modifier
 
-
-    #code that has not yet been added
-    #race_modify_strength = []
-    #race_modify_constitution = []
-    #race_modify_wisdom = []
-    #class_modify_strength = []
-    #class_modify_dextarity = []
-    #class_modify_constitution = []
-    #class_modify_intelligence = []
 
     while True:
         choice = menu()
